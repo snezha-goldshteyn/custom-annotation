@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=random.randomvalues.configuration.RandomConfiguration

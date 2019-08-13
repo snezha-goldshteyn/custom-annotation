@@ -1,11 +1,9 @@
 package random.randomvalues.handlers;
 
-import org.springframework.stereotype.Service;
 import random.randomvalues.annotation.Types;
 
 import java.util.Random;
 
-@Service
 public class RandomValueIdNumber implements RandomHandler {
     private Random generator = new Random();
 

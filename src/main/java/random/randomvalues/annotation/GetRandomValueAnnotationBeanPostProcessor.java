@@ -1,5 +1,6 @@
 package random.randomvalues.annotation;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -14,13 +15,9 @@ import java.util.Map;
 import static java.util.stream.Collectors.toMap;
 
 @Component
+@RequiredArgsConstructor
 public class GetRandomValueAnnotationBeanPostProcessor implements BeanPostProcessor {
-    private Map <Types, RandomHandler> map;
-
-    @Autowired
-    public void initMap (List<RandomHandler> handlers) {
-        map = handlers.stream().collect(toMap(RandomHandler::type, h -> h));
-    }
+    private final Map <Types, RandomHandler> map;
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
