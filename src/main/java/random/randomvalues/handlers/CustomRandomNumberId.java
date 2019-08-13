@@ -19,7 +19,7 @@ public class CustomRandomNumberId implements RandomHandler {
     @Override
     public Object getRandomValue() {
         List<String> ids = properties.getIds();
-        String id = (String) getCustomRandomValue(ids);
-        return Integer.valueOf(id);
+        Object id = getCustomRandomValue(ids);
+        return Integer.parseInt((String) id);
     }
 }
